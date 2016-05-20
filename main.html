@@ -1,6 +1,10 @@
 <html>
 <head>
 <title> Pokemon world: world of magic</title>
+<link href='https://fonts.googleapis.com/css?family=Oswald|Raleway' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
 <style> 
 body {
 	color: blue;
@@ -10,14 +14,55 @@ h1 {
 	font-size: 36px;
     color: red;
 }
-p {
-
-}
+.Sylveon-image {
+            max-width: 50%;
+        }
 </style>
 </head>
 <body>
 <h1>Crystleon: Miracle Pokemon</h1>
 <p>The most unique, most powerful and the rarest form of Eevee</p>
 <a href="index.html"> </a>
+<button id="color"> change color!</button>
+
+ <img class="Sylveon-image" id="Sylveon-image" src="image/crystleon.jpg">
+<script>
+document.getElementById('color').onclick = changeColor;
+
+var currentColor = "red";
+function changeColor() {
+	if(currentColor=="red") {
+    document.body.style.color = "green";
+    currentColor = "green";
+	} else{
+    document.body.style.color = "red";
+    currentColor = "red";
+	}
+	return;
+}
+</script>
+<button id="color"> change color on headline!</button>
+<script>
+document.getElementById('color').onclick = changeColor;
+
+var secondColor = "red";
+function changeColor()
+{
+	if(secondColor=="red")
+	{
+		document.headline.style.color="yellow";
+		secondColor= "yellow";
+	}else{
+		document.headline.style.color ="red";
+		secondColor = "red";
+	}
+	return;
+}
+</script>
+<script>
+$(".Sylveon-image").ready(animate())
+
 </body>
 </html>
+
+
