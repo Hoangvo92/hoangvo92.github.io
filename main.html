@@ -5,17 +5,42 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+
 <style> 
 body {
 	color: blue;
 }
 h1 {
-	font-family: Times New Roman,  sans-serif;
+	font-family: Arial,  sans-serif;
 	font-size: 36px;
     color: red;
+    text-align: center;
 }
+html, body {
+            height: 100%;
+        }
+        body {
+            background-color: yellow;
+            font-family: 'Raleway', sans-serif;
+            margin: 0px;
+        }
+       .top {
+            height: 75%;
+            background-color: purple;
+        }
+        .middle {
+            background-color: blue;
+        }
+        .bottom {
+            height: 75%;
+            background-color: orange;
+        }
+        .top h1, .top a, .middle h1, .middle a {
+            color: white;
+        }
 .Sylveon-image {
             max-width: 50%;
+            text-align: center;
         }
 </style>
 </head>
@@ -24,7 +49,10 @@ h1 {
 <p>The most unique, most powerful and the rarest form of Eevee</p>
 <a href="index.html"> </a>
 <button id="color"> change color!</button>
-
+<button id="color"> change color on headline!</button>
+<p> </p>
+ <button onclick="enlarge()">Enlarge Sylveon photo!</button><br>
+ <button id="show-hide-btn">Show/Hide Sylveon Photo</button><br>
  <img class="Sylveon-image" id="Sylveon-image" src="image/crystleon.jpg">
 <script>
 document.getElementById('color').onclick = changeColor;
@@ -41,7 +69,7 @@ function changeColor() {
 	return;
 }
 </script>
-<button id="color"> change color on headline!</button>
+
 <script>
 document.getElementById('color').onclick = changeColor;
 
@@ -61,7 +89,19 @@ function changeColor()
 </script>
 <script>
 $(".Sylveon-image").ready(animate())
-
+ $(".Sylveon-image").hide();
+         function enlarge() {
+            document.getElementById("cat-image").style = "width: 100%";
+        }
+        $(function() {
+            
+            $(".Sylveon-image").slideDown(500);
+        })
+​
+        $("#show-hide-btn").on("click", function() {
+            $("#Sylveon-image").fadeToggle(100);;
+        })
+​
 </body>
 </html>
 
