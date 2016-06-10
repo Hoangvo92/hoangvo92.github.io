@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Week 8</title>
+    <link href='https://fonts.googleapis.com/css?family=Oswald|Raleway' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" href="css/vegas.min.css">
+    <link rel="stylesheet" href="css/justifiedGallery.min.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            background-color: yellow;
+            font-family: 'Raleway', sans-serif;
+            margin: 0px;
+        }
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            text-align: center;
+        }
+        .top {
+            height: 75%;
+            background-color: purple;
+            opacity: 0.8;
+        }
+        .middle {
+            background-color: blue;
+            opacity: 0.8;
+        }
+        .bottom {
+            height: 75%;
+            background-color: orange;
+            opacity: 0.8;
+        }
+        .top h1, .top a, .middle h1, .middle a {
+            color: white;
+        }
+        .cat-image {
+            max-width: 50%;
+        }
+        .dog-image {
+            max-width: 50%;
+        }
+        .cat-image-gallery {
+            height: 500px;
+        }
+    </style>
+​
+  </head>
+  <body>
+    <h1 id="header-text"><i class="fa fa-user" aria-hidden="true"></i> Hello DG</h1>
+    <hr>
+​
+    <div class="top" id="top">
+        <h1>top</h1>
+        <button onclick="changeHeader()">Change Hello DG to Hello Web Group</button><br>
+        <button onclick="enlarge()">Enlarge cat photo!</button><br>
+        <button id="show-hide-btn">Show/Hide Cat Photo</button><br>
+​
+        <!-- <img class="cat-image" id="cat-image" src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg"> -->
+    </div>
+​
+    <div class="middle">
+        <h1>My Pet Collection</h1>
+        <center><button id="show-cat-btn">Show Cat Photo</button><button id="show-dog-btn">Show Dog Photo</button></center><br><br>
+​
+        <div class="cat-image-gallery">
+            <img alt="test" src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg">
+            <img src="http://i1.irishmirror.ie/incoming/article6745850.ece/ALTERNATES/s615b/Ginger-tabby-cat.jpg">
+            <img src="http://g-ecx.images-amazon.com/images/G/01/img15/pet-products/small-tiles/30423_pets-products_january-site-flip_3-cathealth_short-tile_592x304._CB286975940_.jpg">
+            <img src="http://www.top13.net/wp-content/uploads/2015/10/perfectly-timed-funny-cat-pictures-5.jpg">
+        </div>
+​
+        <div id="cat-image">
+            <a href="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg" data-lightbox="cat" data-title="cat 1"><img alt="test" src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg"></a>
+            <a href="http://i1.irishmirror.ie/incoming/article6745850.ece/ALTERNATES/s615b/Ginger-tabby-cat.jpg" data-lightbox="cat"><img src="http://i1.irishmirror.ie/incoming/article6745850.ece/ALTERNATES/s615b/Ginger-tabby-cat.jpg"></a>
+            <a href="http://g-ecx.images-amazon.com/images/G/01/img15/pet-products/small-tiles/30423_pets-products_january-site-flip_3-cathealth_short-tile_592x304._CB286975940_.jpg" data-lightbox="cat"><img src="http://g-ecx.images-amazon.com/images/G/01/img15/pet-products/small-tiles/30423_pets-products_january-site-flip_3-cathealth_short-tile_592x304._CB286975940_.jpg"></a>
+            <a href="http://www.top13.net/wp-content/uploads/2015/10/perfectly-timed-funny-cat-pictures-5.jpg" data-lightbox="cat"><img src="http://www.top13.net/wp-content/uploads/2015/10/perfectly-timed-funny-cat-pictures-5.jpg"></a>
+        </div>
+​
+        <br><br>
+​
+        <img class="dog-image" src="https://i.kinja-img.com/gawker-media/image/upload/xqkbwkexcl7udc5va7pn.jpg"><img class="dog-image" src="http://g-ecx.images-amazon.com/images/G/01/img15/pet-products/small-tiles/23695_pets_vertical_store_dogs_small_tile_8._CB312176604_.jpg"><img class="dog-image" src="https://www.cesarsway.com/sites/newcesarsway/files/styles/large_article_preview/public/Common-dog-behaviors-explained.jpg?itok=FSzwbBoi"><img class="dog-image" src="https://pixabay.com/static/uploads/photo/2016/01/05/17/51/dog-1123016_960_720.jpg">
+    </div>
+​
+    <div class="bottom">
+        <h1>bottom</h1>
+        <form name="contactForm" onsubmit="return validate()">
+            Name: <input type="text" name="firstname">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+​
+    <script src="js/vegas.min.js"></script>
+    <script src="js/galleria.min.js"></script>
+    <script src="js/jquery.justifiedGallery.min.js"></script>
+    <script src="js/lightbox.js"></script>
+​
+    <script>
+        $("body").vegas({
+            slides: [
+                { src: "https://images.unsplash.com/photo-1462774603919-1d8087e62cad?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=0ebd884b4d6ac379f42146a2b26fbf2e" },
+                { src: "https://images.unsplash.com/photo-1460500063983-994d4c27756c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=27c2758e7f3aa5b8b3a4a1d1f1812310" }
+            ]
+        });
+​
+        Galleria.loadTheme('themes/classic/galleria.classic.min.js');
+​
+        Galleria.run('.cat-image-gallery');
+​
+        $("#cat-image").justifiedGallery();
+​
+        // $("#cat-image").hide();
+        $(".dog-image").hide();
+        $("#header-text").hide();
+        $("#top").hide();
+        $(function() {
+            $("#header-text").fadeIn();
+            $("#top").slideDown(500);
+        })
+​
+        $("#show-hide-btn").on("click", function() {
+            $("#cat-image").fadeToggle(100);;
+        })
+​
+        $("#show-cat-btn").on("click", function() {
+            $(".cat-image").fadeIn();
+            $(".dog-image").fadeOut();
+        })
+​
+        $("#show-dog-btn").on("click", function() {
+            $(".dog-image").fadeIn();
+            $(".cat-image").fadeOut();
+        })
+​
+        function changeHeader() {
+            var text = document.getElementById("header-text").innerHTML;
+            if (text == "Hello DG")
+                document.getElementById("header-text").innerHTML = "Hello Web Group";
+            else
+                document.getElementById("header-text").innerHTML = "Hello DG";
+​
+        }
+​
+        function enlarge() {
+            document.getElementById("cat-image").style = "width: 100%";
+        }
+​
+        function validate() {
+            var text = document.forms["contactForm"]["firstname"].value;
+            if (text == "")
+                alert("Error! Textbox is empty");
+            else
+                alert("Your value is " + text);
+        }
+    </script>
+​
+  </body>
+</html>
+Add Comment

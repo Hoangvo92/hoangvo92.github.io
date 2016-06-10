@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="vegas.min.css">
+    <script src="vegas.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style> 
 body {
@@ -42,6 +45,7 @@ html, body {
             max-width: 50%;
             text-align: center;
         }
+        
 </style>
 </head>
 <body>
@@ -54,6 +58,7 @@ html, body {
  <button onclick="enlarge()">Enlarge Sylveon photo!</button><br>
  <button id="show-hide-btn">Show/Hide Sylveon Photo</button><br>
  <img class="Sylveon-image" id="Sylveon-image" src="image/crystleon.jpg">
+ <h1>bottom</h1>
 <script>
 document.getElementById('color').onclick = changeColor;
 
@@ -101,6 +106,16 @@ $(".Sylveon-image").ready(animate())
         $("#show-hide-btn").on("click", function() {
             $("#Sylveon-image").fadeToggle(100);;
         })
+        </script>
+<script>
+$("body").vegas({
+            slides: [
+                { src: "image/steeleon.jpg"},
+                { src: "image/aereon.png"},
+                { src: "image/aireon.png"},
+                {src: "image/eevee_evolutions.jpg"},
+                {src: "image/Drakeon.jpg"}]
+</script>
 ​
 </body>
 </html>
